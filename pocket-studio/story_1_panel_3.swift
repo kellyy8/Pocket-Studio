@@ -1,3 +1,6 @@
+//
+
+
 import SwiftUI
 
 struct story_1_panel_3: View {
@@ -6,14 +9,16 @@ struct story_1_panel_3: View {
     @State private var scale: CGFloat = 1.0
     @State private var position: CGPoint = .zero
     @State private var switchView: Bool = false
+    @State private var chaptersView: Bool = false
 
     private let minZoom: CGFloat = 1.0
     private let depthEffectBase: CGFloat = 0.1
     private let zoomThreshold: CGFloat = 5.0
 
     private let layers = [
-        Layer(id: 0, imageName: "bunny_in_mirror", depthEffect: 1.0),
-        Layer(id: 1, imageName: "bunny_out_mirror", depthEffect: 2.0),
+        Layer(id: 0, imageName: "bunny_out_mirror", depthEffect: 1.0),
+        Layer(id: 1, imageName: "bunny_in_mirror", depthEffect: 2.0),
+
     ]
 
     private func opacity(layer: Layer) -> Double {
@@ -24,47 +29,69 @@ struct story_1_panel_3: View {
     }
 
     var body: some View {
-        Group {
-            if switchView {
-                story_1_panel_3()
+        ZStack {
+            if chaptersView {
+                story_1_chapters() // Replace this with your actual View
             } else {
-                GeometryReader { geometry in
-                    ZStack() {
-                        ForEach(layers, id: \.id) { layer in
-                            Image(layer.imageName)
-                                .resizable()
-                                .scaledToFit()
-                                .offset(x: self.position.x - geometry.size.width / 2,
-                                        y: self.position.y - geometry.size.height / 2)
-                                .scaleEffect(max(scale * magnification, minZoom) + depthEffectBase * CGFloat(layer.depthEffect))
-                                .offset(x: geometry.size.width / 2 - self.position.x,
-                                        y: geometry.size.height / 2 - self.position.y)
-                                .opacity(opacity(layer: layer))
-                                .gesture(
-                                    MagnificationGesture()
-                                        .updating($magnification) { value, state, _ in
-                                            state = value
-                                        }
-                                        .onEnded { value in
-                                            self.scale = max(self.scale * value, self.minZoom)
-                                            if self.scale >= self.zoomThreshold {
-                                                self.switchView = true
-                                            }
-                                        }
-                                        .simultaneously(with: DragGesture()
-                                            .updating($dragOffset) { value, state, _ in
-                                                state = value.translation
-                                            }
+                Group {
+                    if switchView {
+                        // Replace this with the view you want to display when switchView is true
+                    } else {
+                        GeometryReader { geometry in
+                            ZStack() {
+                                ForEach(layers, id: \.id) { layer in
+                                    Image(layer.imageName)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .offset(x: self.position.x - geometry.size.width / 2,
+                                                y: self.position.y - geometry.size.height / 2)
+                                        .scaleEffect(max(scale * magnification, minZoom) + depthEffectBase * CGFloat(layer.depthEffect))
+                                        .offset(x: geometry.size.width / 2 - self.position.x,
+                                                y: geometry.size.height / 2 - self.position.y)
+                                        .opacity(opacity(layer: layer))
+                                        .gesture(
+                                            MagnificationGesture()
+                                                .updating($magnification) { value, state, _ in
+                                                    state = value
+                                                }
+                                                .onEnded { value in
+                                                    self.scale = max(self.scale * value, self.minZoom)
+                                                    if self.scale >= self.zoomThreshold {
+                                                        self.switchView = true
+                                                    }
+                                                }
+                                                .simultaneously(with: DragGesture()
+                                                    .updating($dragOffset) { value, state, _ in
+                                                        state = value.translation
+                                                    }
+                                                )
                                         )
-                                )
-                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                                .onAppear {
-                                    self.position = CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                                        .onAppear {
+                                            self.position = CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                                        }
                                 }
+                            }
                         }
+                        .edgesIgnoringSafeArea(.all)
                     }
                 }
-                .edgesIgnoringSafeArea(.all)
+                VStack {
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            self.chaptersView = true
+                        }) {
+                            Image(systemName: "ellipsis")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(.black)
+                                .padding()
+                        }
+                    }
+                    Spacer()
+                }
             }
         }
     }

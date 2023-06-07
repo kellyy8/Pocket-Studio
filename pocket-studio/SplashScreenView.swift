@@ -1,4 +1,4 @@
-import SwiftUI
+import SwiftUI  
 
 struct SplashScreenView: View {
     @Environment(\.colorScheme) var colorScheme
@@ -72,3 +72,4 @@ struct SplashScreenView_Previews: PreviewProvider {
         SplashScreenView()
     }
 }
+

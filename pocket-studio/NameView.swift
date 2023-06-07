@@ -13,45 +13,49 @@ struct NameView: View {
     }
 
     var body: some View {
-        ZStack {
-            Color.black
-                .ignoresSafeArea()
-            Circle()
-                .scale(1.7)
-                .foregroundColor(.white.opacity(0.15))
-            Circle()
-                .scale(1.35)
-                .foregroundColor(.white)
+        NavigationView {
+            ZStack {
+                Color.brown
+                    .ignoresSafeArea()
+                Circle()
+                    .scale(1.7)
+                    .foregroundColor(.white.opacity(0.15))
+                Circle()
+                    .scale(1.35)
+                    .foregroundColor(.white)
 
-            VStack
-            {
-                Text("Type in name:")
-                    .font(.largeTitle)
-                    .bold()
-                    .padding()
-
-                TextField("Name", text: $username)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .background(Color.black.opacity(0.05))
-                    .cornerRadius(10)
-                NavigationLink(destination: WelcomeView(username: username)) {
-                    Text("Start")
-                        .font(.system(size: 20))
+                VStack {
+                    Text("Type in name:")
+                        .font(.largeTitle)
                         .bold()
-                        .foregroundColor(.white)
                         .padding()
-                        .background(Color.black)
-                        .cornerRadius(25)
-                }
-                .padding(.top, 10)
-                .onChange(of: username) { newValue in // Save the username when it changes
-                    UserDefaults.standard.set(newValue, forKey: usernameKey)
+
+                    TextField("Name", text: $username)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
+                    
+                    NavigationLink(destination: LandingPageView()                        .navigationBarBackButtonHidden(true)) {
+                        Text("Start")
+                            .font(.system(size: 20))
+                            .bold()
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.black)
+                            .cornerRadius(25)
+                    }
+                    .padding(.top, 10)
+                    .onChange(of: username) { newValue in // Save the username when it changes
+                        UserDefaults.standard.set(newValue, forKey: usernameKey)
+                    }
                 }
             }
-        }.navigationBarHidden(true)
+            .navigationBarHidden(true)
+        }
     }
 }
+
 
 struct NameView_Previews: PreviewProvider {
     static var previews: some View {

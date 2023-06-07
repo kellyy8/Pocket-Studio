@@ -14,7 +14,7 @@ struct LandingPageView: View {
     @State private var username: String
     @State private var stories: [Story] = [
         Story(title: "Hopping\nthrough\nthe Seasons", authors: ["Jocelyn Mendoza"], rating: 4.5, duration: "30min", numberOfStickers: 10, coverImageName: "book_cover", artists: ["Jennie Gao", "Ronald Lu", "Joyce Pang"]),
-        Story(title: "Locked", authors: ["Author 2"], rating: 4.7, duration: "20min", numberOfStickers: 5, coverImageName: "book_cover", artists: ["Artist 3"])
+        Story(title: "Cloud Bunny", authors: [], rating: 4.7, duration: "20min", numberOfStickers: 5, coverImageName: "locked_story", artists: [""])
     ]
     @State private var selectedStoryIndex = 0
 
@@ -35,7 +35,6 @@ struct LandingPageView: View {
                             .fill(LinearGradient(gradient: Gradient(colors: [Color(.sRGB, red: 0.13, green: 0.3, blue: 0.21), Color(.sRGB, red: 0.26, green: 0.33, blue: 0.21)]), startPoint: .leading, endPoint: .trailing))
                             .frame(width: 220, height: 70) // Adjust the width and height as desired
                             .shadow(color: .black, radius: 20, x: 0, y: 2) // Add shadow with desired properties
-
                     )
                 
                 TabView(selection: $selectedStoryIndex) {
@@ -94,7 +93,6 @@ struct LandingPageView: View {
                     }
                 }
                 .tabViewStyle(PageTabViewStyle())
-                .padding()
                 
                 HStack {
                     Spacer()
@@ -129,7 +127,6 @@ struct LandingPageView: View {
                     }
                     Spacer()
                 }
-                .padding()
                 .background(
                     RoundedRectangle(cornerRadius: 20)
                         .fill(LinearGradient(gradient: Gradient(colors: [Color(.sRGB, red: 0.13, green: 0.3, blue: 0.21), Color(.sRGB, red: 0.26, green: 0.33, blue: 0.21)]), startPoint: .leading, endPoint: .trailing))
@@ -138,6 +135,13 @@ struct LandingPageView: View {
 
                 )
             }
+            .background(
+                Image("overlay")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+                    .opacity(0.1)
+            )
             .background(
                 Image("Landing_Page")
                     .resizable()

@@ -8,12 +8,14 @@ struct StartView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
+                
                 Text("by creative labs")
                     .font(.footnote)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                 
-                NavigationLink(destination: NameView()) {
+                NavigationLink(destination: LandingPageView()
+                                .navigationBarBackButtonHidden(true)) {
                     Text("Start")
                         .font(.system(size: 20))
                         .bold()
@@ -24,7 +26,7 @@ struct StartView: View {
                 }
                 .padding(.top, 50)
             }
-            .navigationBarHidden(false)
+            .navigationBarHidden(true)
         }
     }
 }
