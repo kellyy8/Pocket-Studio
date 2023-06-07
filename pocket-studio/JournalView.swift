@@ -8,12 +8,8 @@ struct JournalView: View {
     
     var body: some View {
         VStack {
-//            Spacer().frame(height: 0)
-            
-            // TODO: BOLD THE DATES AND ADD enTry BUTTON TEXT.
-            
-            // TODO: Position date to top right.
-            
+            // TODO: BOLD THE DATES AND ADD ENTRY BUTTON TEXT.
+                        
             // DATE
             RoundedRectangle(cornerRadius: 50)
                 .fill(Color(#colorLiteral(red: 0.27, green: 0.40, blue: 0.29, alpha: 1)))
@@ -32,10 +28,8 @@ struct JournalView: View {
                 .frame(maxWidth: 220)
                 .multilineTextAlignment(.center)
                 .offset(x: 0, y: 20)
-                
-//            Spacer().frame(height: 55)
-            
-            // TODO: Add mood bar (below cloud text). Make face slidable and divide range of positions into three.
+                            
+            // TODO: Dynamic user interaction: Make face slidable and divide range of positions into three.
             
             HStack{
                 Divider()
@@ -49,30 +43,9 @@ struct JournalView: View {
                     .offset(x:40)
             }.offset(y:35)
             
-//            Text("JOURNAL")
-//                .font(.custom("Inter Regular", size: 14))
-//                .tracking(1.4)
-            
-//            TextField("Enter new entry", text: $newEntry)
-//                .padding(.horizontal)
-            
-            
-            // TODO: Add ^ placeholder text and figure out height and width spacing along the screen for text editor.
-
-            // USER ENTERS JOURNAL ENTRY
-//            ZStack(alignment: .leading){
-                
-//                // PLACEHOLDER TEXT: JOURNAL ENTRY
-//                if newEntry.isEmpty {
-//                    Text("Enter journal entry here.")
-//                        .font(.custom("Inter Regular", size: 15))
-////                        .offset(x:30)
-//                        .opacity(0.4)
-//                }
                 TextEditor(text: $newEntry)
                     .scrollContentBackground(.hidden)
                     .font(.custom("Inter Regular", size: 19.2))
-                //                .frame(width: 200, height: 200)
                     .lineSpacing(8.5)
                     .offset(x:-30, y: -8)
                     .padding(.horizontal, 30)
@@ -82,7 +55,6 @@ struct JournalView: View {
                             .opacity(newEntry.isEmpty ? 0.4 : 0),
                         alignment:.topLeading
                     ).offset(x:30, y:38)
-                //          .disabled(newEntry.isEmpty)
             
             Button(action: {
                 if !newEntry.isEmpty {
@@ -103,7 +75,7 @@ struct JournalView: View {
             }
             .padding(.horizontal)
             
-            //TODO: Display entry after button is tapped. ^
+            //TODO: Display newEntry string after button is tapped. ^
             
 //            RoundedRectangle(cornerRadius: 12)
 //                .fill(Color(#colorLiteral(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)))
@@ -116,19 +88,15 @@ struct JournalView: View {
 //                    .cornerRadius(12)
 //                )
             
-            // TODO: Move the 'add entry' button down or delete the last line in the background for demo.
-//            Spacer()
+            // TODO: ADD NAV BAR. Move the 'add entry' button up and remove a line or two from the background.
             
         }
         .padding(.vertical)
-//        .background(Color(#colorLiteral(red: 0.9, green: 0.1, blue: 0.1, alpha: 1)))
-//        .edgesIgnoringSafeArea(.all)
         .background(
             Image("sample3")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
-//                .opacity(0.9)
         )
         
     }
