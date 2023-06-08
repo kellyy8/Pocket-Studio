@@ -39,7 +39,7 @@ struct WelcomeView: View {
             .padding(.bottom)
 
             
-            NavigationLink(destination: JournalView()) {
+            NavigationLink(destination: JournalPage1()) {
                 Text("Journal Test")
                     .font(.system(size: 20))
                     .bold()
