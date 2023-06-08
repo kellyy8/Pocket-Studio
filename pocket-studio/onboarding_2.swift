@@ -110,7 +110,7 @@ struct onboarding_2: View {
                     )
                     Spacer()
                 }
-                .padding(.top, 800)
+                .padding(.top, 725)
             }
             .background(
                 Image("overlay")

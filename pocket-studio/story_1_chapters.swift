@@ -26,7 +26,7 @@
                                                     Image(systemName: "x.circle")
                                                         .bold()
                                                         .foregroundColor(Color.black) 
-                                                        .font(.custom("Aleo Bold Italic", size: 15))
+                                                        .font(.custom("Aleo Bold Italic", size: 25))
                                                         .padding(7)
                                             },
                                             alignment: .topLeading // This will position the "X" at the top left corner
@@ -102,32 +102,6 @@
                                         ChapterButton(chapterName: "Chapter 4: Summer")
                                     }
                                 }
-//                                Section {
-//                                    VStack{
-//                                        HStack {
-//                                            Image(systemName: "gift")
-//                                                .padding(.leading, 15)
-//                                                .foregroundColor(Color(#colorLiteral(red: 0.14, green: 0.17, blue: 0.21, alpha: 1)))
-//                                                .font(.system(size: 20))
-//                                            
-//                                            Text("Stickers")
-//                                                .font(.system(size: 20, weight: .bold))
-//                                                .bold()
-//                                                .foregroundColor(Color(#colorLiteral(red: 0.14, green: 0.17, blue: 0.21, alpha: 1)))
-//                                                .tracking(2.4)
-//                                                .padding(.leading, 5)
-//                                                .font(.headline)
-//                                                .frame(maxWidth: .infinity, alignment: .leading)
-//                                        }
-////                                        HStack() {
-////                                            Image("Group_9")
-////                                            Image("Group_7")
-////                                            Image("sheva_ti")
-////                                            Image("easel")
-////                                            Image("mason_jar")
-////                                        }
-//                                    }
-//                                }
                             }
                             .padding(EdgeInsets(top: 0, leading: 10, bottom: 162, trailing: 10)) // Adjusted padding
                             .foregroundColor(.black)
@@ -173,7 +147,7 @@
                             .frame(width: 500, height:100) // Adjust the width and height as desired
                     )
                 }
-                .padding(.top, 120) // Adjust this number to shift your view further down
+                .padding(.top, 90) // Adjust this number to shift your view further down
                 .background(
                     Image("Landing_Page")
                         .resizable()
