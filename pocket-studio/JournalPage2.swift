@@ -2,8 +2,8 @@ import SwiftUI
 
 struct JournalPage2: View {
     @State private var newEntry: String = ""
-    @State private var entries: [String] = []
-    @State private var selectedEntry: String?
+    @State private var storedEntry: String = ""
+    @State private var status: String = "Add Entry"
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -20,43 +20,54 @@ struct JournalPage2: View {
                             .foregroundColor(.white)
                             .font(.custom("Inter Regular", size: 14))
                     )
-                    .offset(x:120, y: -10)
+                    .offset(x:120, y: 60)
                 
-                // FOR USER TO INPUT JOURNAL ENTRY
-                TextEditor(text: $newEntry)
-                    .scrollContentBackground(.hidden)
-                    .font(.custom("Inter Regular", size: 19.2))
-                    .lineSpacing(8.5)
-                    .offset(x:-30, y: -8)
-                    .padding(.horizontal, 30)
-                    .overlay(
-                        Text("Continue journal entry here.")
-                            .font(.custom("Inter Regular", size: 15))
-                            .opacity(newEntry.isEmpty ? 0.4 : 0),
-                        alignment:.topLeading
-                    ).offset(x:30, y:8)
-                
-                // FOR USER TO STORE ENTRY
-                //TODO: Display $newEntry string after button is tapped.
+                // STORE OR DISPLAY USER'S ENTRY
+                if storedEntry.isEmpty{
+                    TextEditor(text: $newEntry)
+                        .scrollContentBackground(.hidden)
+                        .font(.custom("Inter Regular", size: 19.2))
+                        .lineSpacing(8.5)
+                        .offset(x:-30, y: -8)
+                        .padding(.horizontal, 20)
+                        .overlay(
+                            Text("Enter journal entry here.")
+                                .font(.custom("Inter Regular", size: 15))
+                                .opacity(newEntry.isEmpty ? 0.4 : 0),
+                            alignment:.topLeading
+                        ).offset(x:35, y:75)
+                        
+                        // Fixed frame size for TextEditor and Text so that other components' positions do not shift when we display the Text instead of TextEditor upon saving user's entry.
+                        .frame(width: 395, height: 800)
+                }
+                else{
+                    Text(storedEntry)
+                        .frame(width: 395, height: 800, alignment: .topLeading)
+                        .offset(x:30, y:75)
+                        .font(.custom("Inter Regular", size: 19.2))
+                        .lineSpacing(8.5)
+                }
+
+                // FOR USER TO STORE ENTRY IF NO ENTRY STORED YET
                 Button(action: {
                     if !newEntry.isEmpty {
-                        entries.append(newEntry)
-                        newEntry = ""
+                        storedEntry = newEntry
+                        status = "Entry saved."
                     }
                 }) {
                     RoundedRectangle(cornerRadius: 50)
                         .fill(Color(#colorLiteral(red: 0.27, green: 0.40, blue: 0.29, alpha: 1)))
                         .frame(width: 100, height: 30)
                         .overlay(
-                            Text("Add Entry")
+                            Text(status)
                                 .foregroundColor(.white)
                                 .font(.custom("Inter Regular", size: 15))
                             //                            .font(.system(size: 30, weight: .heavy))
                         )
-                        .offset(x:0, y:20)
+                        .offset(x:0, y:-50)
                 }
                 .padding(.horizontal)
-                
+
                 // TODO: Move the 'add entry' button up and remove a line or two from the background so NAV BAR is not covering it.
                 
                 // TODO: Add 'NAV BAR' here (last item in VStack).
@@ -104,48 +115,3 @@ struct JournalPage2_Previews: PreviewProvider {
         JournalPage2()
     }
 }
-
-
-// OLD CODE FOR BACK AND FORWARD BUTTONS
-//Button(action: {
-//    // TODO: UPDATE FUNCTIONALITY
-//    if !newEntry.isEmpty {
-//        entries.append(newEntry)
-//        newEntry = ""
-//    }
-//}) {
-//    RoundedRectangle(cornerRadius: 50)
-//        .fill(Color(#colorLiteral(red: 0.27, green: 0.40, blue: 0.29, alpha: 1)))
-//        .frame(width: 50, height: 50)
-//        .overlay(
-//            Image("backArrow").offset(x:8)
-////                            Text("<")
-////                                .foregroundColor(.white)
-////                                .font(.custom("Inter Regular", size: 20))
-////                                .offset(x: 10)
-//            //  .font(.system(size: 30, weight: .heavy))
-//        )
-//        .offset(x:-150, y:0)
-//}
-//.padding(.horizontal)
-//
-//Button(action: {
-//    // TODO: UPDATE FUNCTIONALITY
-//    if !newEntry.isEmpty {
-//        entries.append(newEntry)
-//        newEntry = ""
-//    }
-//}) {
-//    RoundedRectangle(cornerRadius: 50)
-//        .fill(Color(#colorLiteral(red: 0.27, green: 0.40, blue: 0.29, alpha: 1)))
-//        .frame(width: 50, height: 50)
-//        .overlay(
-//            Image("forwardArrow").offset(x:-8)
-////                            Text(">")
-////                                .foregroundColor(.white)
-////                                .font(.custom("Inter Regular", size: 20))
-////                                .offset(x: -10)
-//            //  .font(.system(size: 30, weight: .heavy))
-//        )
-//        .offset(x:150, y:0)
-//}

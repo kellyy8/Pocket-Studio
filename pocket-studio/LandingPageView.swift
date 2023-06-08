@@ -107,7 +107,7 @@ struct LandingPageView: View {
                     }
                     Spacer()
 
-                    NavigationLink(destination: JournalCover()
+                    NavigationLink(destination: JournalPage2()
                         .navigationBarBackButtonHidden(true)) {
                         Image(systemName: "square.and.pencil")
                             .font(.system(size: 30)) // Adjust the size to make the icon bigger
