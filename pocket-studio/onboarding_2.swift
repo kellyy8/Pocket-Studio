@@ -84,7 +84,7 @@ struct onboarding_2: View {
                         }
                         Spacer()
                         
-                        NavigationLink(destination: JournalView().navigationBarBackButtonHidden(true)) {
+                        NavigationLink(destination: JournalCover().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "square.and.pencil")
                                 .font(.system(size: 30))
                                 .padding()

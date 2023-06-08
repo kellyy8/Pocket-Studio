@@ -31,6 +31,8 @@
 		64F468332A2F092C0072BBB9 /* story_1_panel_5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F468322A2F092C0072BBB9 /* story_1_panel_5.swift */; };
 		64FC99972A29235800A4F1C1 /* story_1_panel_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FC99962A29235800A4F1C1 /* story_1_panel_3.swift */; };
 		97952E892A3123C3008259AA /* lofi_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97952E882A3123C3008259AA /* lofi_music.mp3 */; };
+		97952E8B2A3150DF008259AA /* JournalPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97952E8A2A3150DF008259AA /* JournalPage2.swift */; };
+		97952E8D2A3181C0008259AA /* JournalCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97952E8C2A3181C0008259AA /* JournalCover.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		64F468322A2F092C0072BBB9 /* story_1_panel_5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = story_1_panel_5.swift; sourceTree = "<group>"; };
 		64FC99962A29235800A4F1C1 /* story_1_panel_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = story_1_panel_3.swift; sourceTree = "<group>"; };
 		97952E882A3123C3008259AA /* lofi_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lofi_music.mp3; sourceTree = SOURCE_ROOT; };
+		97952E8A2A3150DF008259AA /* JournalPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalPage2.swift; sourceTree = "<group>"; };
+		97952E8C2A3181C0008259AA /* JournalCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCover.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +139,9 @@
 				641D1F6B2A00C94D00F369CA /* StartView.swift */,
 				64E9D8972A00ECB7000F7A71 /* NameView.swift */,
 				64625A8E2A0E050100008D5D /* LandingPageView.swift */,
+				97952E8C2A3181C0008259AA /* JournalCover.swift */,
 				64625A8C2A0DFC2C00008D5D /* JournalView.swift */,
+				97952E8A2A3150DF008259AA /* JournalPage2.swift */,
 				645EC1E12A2B07480082AED2 /* settingsView.swift */,
 				64F4682E2A2D740C0072BBB9 /* onboarding_1.swift */,
 				64F468302A2D74160072BBB9 /* onboarding_2.swift */,
@@ -223,6 +229,7 @@
 				6482680B2A3066840017831C /* story_1_panel_10.swift in Sources */,
 				643311122A0476760031C3AE /* WelcomeView.swift in Sources */,
 				648268012A30382B0017831C /* story_1_panel_6.swift in Sources */,
+				97952E8B2A3150DF008259AA /* JournalPage2.swift in Sources */,
 				64625A8D2A0DFC2C00008D5D /* JournalView.swift in Sources */,
 				641D1F6E2A00C95D00F369CA /* story_1_panel_1.swift in Sources */,
 				64E9D8982A00ECB7000F7A71 /* NameView.swift in Sources */,
@@ -230,6 +237,7 @@
 				64F4682F2A2D740C0072BBB9 /* onboarding_1.swift in Sources */,
 				64F468332A2F092C0072BBB9 /* story_1_panel_5.swift in Sources */,
 				641D1F5C2A00C8FE00F369CA /* pocket_studioApp.swift in Sources */,
+				97952E8D2A3181C0008259AA /* JournalCover.swift in Sources */,
 				645EC1E22A2B07480082AED2 /* settingsView.swift in Sources */,
 				64625A8F2A0E050100008D5D /* LandingPageView.swift in Sources */,
 				641D1F6A2A00C92400F369CA /* SplashScreenView.swift in Sources */,

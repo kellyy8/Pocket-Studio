@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct JournalPage1: View {
+struct JournalPage2: View {
     @State private var newEntry: String = ""
     @State private var entries: [String] = []
     @State private var selectedEntry: String?
@@ -22,29 +22,6 @@ struct JournalPage1: View {
                     )
                     .offset(x:120, y: -10)
                 
-                // CLOUD TEXT
-                Text("Crying is a healthy and effective way to express your emotions. When was the last time you cried and what made you cry?")
-                    .font(.custom("Inter Regular", size: 10))
-                    .tracking(1.4)
-                    .frame(maxWidth: 220)
-                    .multilineTextAlignment(.center)
-                    .offset(x: 0, y: 20)
-                
-                // TODO: Dynamic user interaction: Make face slidable and divide range of positions into three.
-                
-                // MOOD SLIDER
-                HStack{
-                    Divider()
-                        .frame(width: 100, height: 4)
-                        .overlay(Color(#colorLiteral(red: 0.27, green: 0.40, blue: 0.29, alpha: 1)))
-                        .offset(x:148)
-                    
-                    Image("neutral")
-                        .resizable()
-                        .frame(width: 32.0, height: 32.0)
-                        .offset(x:40)
-                }.offset(y:35)
-                
                 // FOR USER TO INPUT JOURNAL ENTRY
                 TextEditor(text: $newEntry)
                     .scrollContentBackground(.hidden)
@@ -53,11 +30,11 @@ struct JournalPage1: View {
                     .offset(x:-30, y: -8)
                     .padding(.horizontal, 30)
                     .overlay(
-                        Text("Enter journal entry here.")
+                        Text("Continue journal entry here.")
                             .font(.custom("Inter Regular", size: 15))
                             .opacity(newEntry.isEmpty ? 0.4 : 0),
                         alignment:.topLeading
-                    ).offset(x:30, y:38)
+                    ).offset(x:30, y:8)
                 
                 // FOR USER TO STORE ENTRY
                 //TODO: Display $newEntry string after button is tapped.
@@ -89,7 +66,7 @@ struct JournalPage1: View {
             // TODO: Get buttons to take user to corresponding page.
             HStack{
                 // BACK BUTTON
-                NavigationLink(destination: JournalCover()
+                NavigationLink(destination: JournalPage1()
                     .navigationBarBackButtonHidden(true)) {
                     RoundedRectangle(cornerRadius: 50)
                         .fill(Color(#colorLiteral(red: 0.27, green: 0.40, blue: 0.29, alpha: 1)))
@@ -98,6 +75,7 @@ struct JournalPage1: View {
                         .offset(x:-170, y:0)
                 }
                 
+                // TODO: Currently takes user to same page. Will remove forward button for last page later on.
                 // FORWARD BUTTON
                 NavigationLink(destination: JournalPage2()
                     .navigationBarBackButtonHidden(true)) {
@@ -112,7 +90,7 @@ struct JournalPage1: View {
         }
         .padding(.vertical)
         .background(
-            Image("page1")
+            Image("page2")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
@@ -121,9 +99,53 @@ struct JournalPage1: View {
     }
 }
 
-struct JournalPage1_Previews: PreviewProvider {
+struct JournalPage2_Previews: PreviewProvider {
     static var previews: some View {
-        JournalPage1()
+        JournalPage2()
     }
 }
 
+
+// OLD CODE FOR BACK AND FORWARD BUTTONS
+//Button(action: {
+//    // TODO: UPDATE FUNCTIONALITY
+//    if !newEntry.isEmpty {
+//        entries.append(newEntry)
+//        newEntry = ""
+//    }
+//}) {
+//    RoundedRectangle(cornerRadius: 50)
+//        .fill(Color(#colorLiteral(red: 0.27, green: 0.40, blue: 0.29, alpha: 1)))
+//        .frame(width: 50, height: 50)
+//        .overlay(
+//            Image("backArrow").offset(x:8)
+////                            Text("<")
+////                                .foregroundColor(.white)
+////                                .font(.custom("Inter Regular", size: 20))
+////                                .offset(x: 10)
+//            //  .font(.system(size: 30, weight: .heavy))
+//        )
+//        .offset(x:-150, y:0)
+//}
+//.padding(.horizontal)
+//
+//Button(action: {
+//    // TODO: UPDATE FUNCTIONALITY
+//    if !newEntry.isEmpty {
+//        entries.append(newEntry)
+//        newEntry = ""
+//    }
+//}) {
+//    RoundedRectangle(cornerRadius: 50)
+//        .fill(Color(#colorLiteral(red: 0.27, green: 0.40, blue: 0.29, alpha: 1)))
+//        .frame(width: 50, height: 50)
+//        .overlay(
+//            Image("forwardArrow").offset(x:-8)
+////                            Text(">")
+////                                .foregroundColor(.white)
+////                                .font(.custom("Inter Regular", size: 20))
+////                                .offset(x: -10)
+//            //  .font(.system(size: 30, weight: .heavy))
+//        )
+//        .offset(x:150, y:0)
+//}

@@ -145,7 +145,7 @@
                         }
                         Spacer()
                         
-                        NavigationLink(destination: JournalView()
+                        NavigationLink(destination: JournalCover()
                                         .navigationBarBackButtonHidden(true)) {
                             Image(systemName: "square.and.pencil")
                                 .font(.system(size: 30)) // Adjust the size to make the icon bigger
