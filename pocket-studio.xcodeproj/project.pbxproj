@@ -33,9 +33,9 @@
 		64F468312A2D74160072BBB9 /* onboarding_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F468302A2D74160072BBB9 /* onboarding_2.swift */; };
 		64F468332A2F092C0072BBB9 /* story_1_panel_5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F468322A2F092C0072BBB9 /* story_1_panel_5.swift */; };
 		64FC99972A29235800A4F1C1 /* story_1_panel_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FC99962A29235800A4F1C1 /* story_1_panel_3.swift */; };
-		9789A04A2A3274D5008C7A34 /* JournalPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9789A0462A3274D5008C7A34 /* JournalPage1.swift */; };
-		9789A04B2A3274D5008C7A34 /* JournalCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9789A0472A3274D5008C7A34 /* JournalCover.swift */; };
-		9789A04C2A3274D5008C7A34 /* JournalPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9789A0482A3274D5008C7A34 /* JournalPage2.swift */; };
+		9789A0502A3280BD008C7A34 /* JournalCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9789A04D2A3280BD008C7A34 /* JournalCover.swift */; };
+		9789A0512A3280BD008C7A34 /* JournalPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9789A04E2A3280BD008C7A34 /* JournalPage2.swift */; };
+		9789A0522A3280BD008C7A34 /* JournalPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9789A04F2A3280BD008C7A34 /* JournalPage1.swift */; };
 		97952E892A3123C3008259AA /* lofi_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97952E882A3123C3008259AA /* lofi_music.mp3 */; };
 /* End PBXBuildFile section */
 
@@ -67,9 +67,9 @@
 		64F468302A2D74160072BBB9 /* onboarding_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboarding_2.swift; sourceTree = "<group>"; };
 		64F468322A2F092C0072BBB9 /* story_1_panel_5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = story_1_panel_5.swift; sourceTree = "<group>"; };
 		64FC99962A29235800A4F1C1 /* story_1_panel_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = story_1_panel_3.swift; sourceTree = "<group>"; };
-		9789A0462A3274D5008C7A34 /* JournalPage1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JournalPage1.swift; path = ../../../Downloads/JournalPage1.swift; sourceTree = "<group>"; };
-		9789A0472A3274D5008C7A34 /* JournalCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JournalCover.swift; path = ../../../Downloads/JournalCover.swift; sourceTree = "<group>"; };
-		9789A0482A3274D5008C7A34 /* JournalPage2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JournalPage2.swift; path = ../../../Downloads/JournalPage2.swift; sourceTree = "<group>"; };
+		9789A04D2A3280BD008C7A34 /* JournalCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JournalCover.swift; path = ../../../Downloads/JournalCover.swift; sourceTree = "<group>"; };
+		9789A04E2A3280BD008C7A34 /* JournalPage2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JournalPage2.swift; path = ../../../Downloads/JournalPage2.swift; sourceTree = "<group>"; };
+		9789A04F2A3280BD008C7A34 /* JournalPage1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JournalPage1.swift; path = ../../../Downloads/JournalPage1.swift; sourceTree = "<group>"; };
 		97952E882A3123C3008259AA /* lofi_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lofi_music.mp3; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -151,9 +151,9 @@
 				641D1F6B2A00C94D00F369CA /* StartView.swift */,
 				64E9D8972A00ECB7000F7A71 /* NameView.swift */,
 				64625A8E2A0E050100008D5D /* LandingPageView.swift */,
-				9789A0472A3274D5008C7A34 /* JournalCover.swift */,
-				9789A0462A3274D5008C7A34 /* JournalPage1.swift */,
-				9789A0482A3274D5008C7A34 /* JournalPage2.swift */,
+				9789A04D2A3280BD008C7A34 /* JournalCover.swift */,
+				9789A04F2A3280BD008C7A34 /* JournalPage1.swift */,
+				9789A04E2A3280BD008C7A34 /* JournalPage2.swift */,
 				645EC1E12A2B07480082AED2 /* settingsView.swift */,
 				64F4682E2A2D740C0072BBB9 /* onboarding_1.swift */,
 				64F468302A2D74160072BBB9 /* onboarding_2.swift */,
@@ -234,27 +234,27 @@
 			files = (
 				641BC5532A1DACC600C83D8B /* story_1_panel_2.swift in Sources */,
 				64FC99972A29235800A4F1C1 /* story_1_panel_3.swift in Sources */,
+				9789A0522A3280BD008C7A34 /* JournalPage1.swift in Sources */,
 				641D1F6C2A00C94D00F369CA /* StartView.swift in Sources */,
 				641CCF7F2A31436F00F7B054 /* story_1_panel_13.swift in Sources */,
 				6482680D2A3066DB0017831C /* story_1_panel_10.swift in Sources */,
 				641CCF7B2A31434800F7B054 /* story_1_panel_11.swift in Sources */,
-				9789A04A2A3274D5008C7A34 /* JournalPage1.swift in Sources */,
 				641CCF7D2A31435400F7B054 /* story_1_panel_12.swift in Sources */,
 				64F468312A2D74160072BBB9 /* onboarding_2.swift in Sources */,
 				6482680B2A3066840017831C /* story_1_panel_9.swift in Sources */,
 				643311122A0476760031C3AE /* WelcomeView.swift in Sources */,
-				9789A04B2A3274D5008C7A34 /* JournalCover.swift in Sources */,
 				648268012A30382B0017831C /* story_1_panel_6.swift in Sources */,
 				641D1F6E2A00C95D00F369CA /* story_1_panel_1.swift in Sources */,
 				64E9D8982A00ECB7000F7A71 /* NameView.swift in Sources */,
 				641CCF812A31437800F7B054 /* story_1_panel_14.swift in Sources */,
 				648268032A3039B00017831C /* story_1_panel_7.swift in Sources */,
-				9789A04C2A3274D5008C7A34 /* JournalPage2.swift in Sources */,
 				641CCF832A31438300F7B054 /* story_1_panel_15.swift in Sources */,
+				9789A0502A3280BD008C7A34 /* JournalCover.swift in Sources */,
 				64F4682F2A2D740C0072BBB9 /* onboarding_1.swift in Sources */,
 				64F468332A2F092C0072BBB9 /* story_1_panel_5.swift in Sources */,
 				641D1F5C2A00C8FE00F369CA /* pocket_studioApp.swift in Sources */,
 				645EC1E22A2B07480082AED2 /* settingsView.swift in Sources */,
+				9789A0512A3280BD008C7A34 /* JournalPage2.swift in Sources */,
 				64625A8F2A0E050100008D5D /* LandingPageView.swift in Sources */,
 				641D1F6A2A00C92400F369CA /* SplashScreenView.swift in Sources */,
 				645EC1E02A2B011E0082AED2 /* story_1_chapters.swift in Sources */,
