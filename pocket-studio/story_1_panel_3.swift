@@ -13,11 +13,11 @@ struct story_1_panel_3: View {
 
     private let minZoom: CGFloat = 1.0
     private let depthEffectBase: CGFloat = 0.1
-    private let zoomThreshold: CGFloat = 5.0
+    private let zoomThreshold: CGFloat = 7.5
 
     private let layers = [
-        Layer(id: 0, imageName: "bunny_out_mirror", depthEffect: 1.0),
-        Layer(id: 1, imageName: "bunny_in_mirror", depthEffect: 2.0),
+        Layer(id: 0, imageName: "bunny_in_mirror", depthEffect: 1.0),
+        Layer(id: 1, imageName: "bunny_out_mirror", depthEffect: 2.0),
 
     ]
 
@@ -31,11 +31,11 @@ struct story_1_panel_3: View {
     var body: some View {
         ZStack {
             if chaptersView {
-                story_1_chapters() // Replace this with your actual View
+                story_1_chapters()
             } else {
                 Group {
                     if switchView {
-                        // Replace this with the view you want to display when switchView is true
+                        story_1_panel_9()
                     } else {
                         GeometryReader { geometry in
                             ZStack() {
@@ -68,7 +68,7 @@ struct story_1_panel_3: View {
                                         )
                                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                                         .onAppear {
-                                            self.position = CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                                            self.position = CGPoint(x: geometry.size.width / 2 - 45, y: geometry.size.height / 2 + 10)
                                         }
                                 }
                             }

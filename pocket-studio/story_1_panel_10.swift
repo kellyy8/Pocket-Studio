@@ -14,7 +14,7 @@ struct story_1_panel_10: View {
     private let zoomThreshold: CGFloat = 5.0
 
     private let layers = [
-        Layer(id: 0, imageName: "panel_10", depthEffect: 1.0),
+        Layer(id: 0, imageName: "newPanel12", depthEffect: 1.0),
     ]
 
     private func opacity(layer: Layer) -> Double {
@@ -31,7 +31,7 @@ struct story_1_panel_10: View {
             } else {
                 Group {
                     if switchView {
-                        story_1_panel_10()
+                        story_1_panel_11()
                     } else {
                         GeometryReader { geometry in
                             ZStack() {
@@ -64,7 +64,7 @@ struct story_1_panel_10: View {
                                         )
                                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                                         .onAppear {
-                                            self.position = CGPoint(x: geometry.size.width / 2 + 50, y: geometry.size.height / 2)
+                                            self.position = CGPoint(x: geometry.size.width / 2 - 30, y: geometry.size.height / 2 + 140)
                                         }
                                 }
                             }

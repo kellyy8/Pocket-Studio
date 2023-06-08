@@ -28,11 +28,11 @@ struct story_1_panel_2: View {
     var body: some View {
         ZStack {
             if chaptersView {
-                story_1_chapters() // Replace this with your actual View
+                story_1_chapters()
             } else {
                 Group {
                     if switchView {
-                        story_1_panel_3()
+                        story_1_panel_5()
                     } else {
                         GeometryReader { geometry in
                             ZStack() {

@@ -1,12 +1,28 @@
+
 import SwiftUI
 
-struct story_1_panel_8 : View {
+struct story_1_panel_8: View {
+    @GestureState private var magnification: CGFloat = 1.0
+    @GestureState private var dragOffset: CGSize = .zero
+    @State private var scale: CGFloat = 1.0
+    @State private var position: CGPoint = .zero
     @State private var switchView: Bool = false
     @State private var chaptersView: Bool = false
 
+    private let minZoom: CGFloat = 1.0
+    private let depthEffectBase: CGFloat = 0.1
+    private let zoomThreshold: CGFloat = 5.0
+
     private let layers = [
-        Layer(id: 0, imageName: "bunnyriver2", depthEffect: 1.0),
+        Layer(id: 0, imageName: "panel_8", depthEffect: 1.0),
     ]
+
+    private func opacity(layer: Layer) -> Double {
+        let adjustedScale = (scale * magnification - CGFloat(layer.depthEffect) + 1)
+        let fastFactor: Double = 2.5
+        let opacity = min(1.0, max(0.0, Double(adjustedScale) * fastFactor))
+        return opacity
+    }
 
     var body: some View {
         ZStack {
@@ -15,21 +31,45 @@ struct story_1_panel_8 : View {
             } else {
                 Group {
                     if switchView {
-                        AnyView(story_1_panel_9())
+                        story_1_panel_3()
                     } else {
-                        AnyView(
-                            GeometryReader { geometry in
-                                ZStack() {
-                                    ForEach(layers, id: \.id) { layer in
-                                        Image(layer.imageName)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                                    }
+                        GeometryReader { geometry in
+                            ZStack() {
+                                ForEach(layers, id: \.id) { layer in
+                                    Image(layer.imageName)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .offset(x: self.position.x - geometry.size.width / 2,
+                                                y: self.position.y - geometry.size.height / 2)
+                                        .scaleEffect(max(scale * magnification, minZoom) + depthEffectBase * CGFloat(layer.depthEffect))
+                                        .offset(x: geometry.size.width / 2 - self.position.x,
+                                                y: geometry.size.height / 2 - self.position.y)
+                                        .opacity(opacity(layer: layer))
+                                        .gesture(
+                                            MagnificationGesture()
+                                                .updating($magnification) { value, state, _ in
+                                                    state = value
+                                                }
+                                                .onEnded { value in
+                                                    self.scale = max(self.scale * value, self.minZoom)
+                                                    if self.scale >= self.zoomThreshold {
+                                                        self.switchView = true
+                                                    }
+                                                }
+                                                .simultaneously(with: DragGesture()
+                                                    .updating($dragOffset) { value, state, _ in
+                                                        state = value.translation
+                                                    }
+                                                )
+                                        )
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                                        .onAppear {
+                                            self.position = CGPoint(x: geometry.size.width / 2 + 55, y: geometry.size.height / 2 + 125)
+                                        }
                                 }
                             }
-                            .edgesIgnoringSafeArea(.all)
-                        )
+                        }
+                        .edgesIgnoringSafeArea(.all)
                     }
                 }
                 VStack {
@@ -47,16 +87,6 @@ struct story_1_panel_8 : View {
                         }
                     }
                     Spacer()
-                    Button(action: {
-                        self.switchView = true
-                    }) {
-                        Text("Next")
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(Color.blue)
-                            .cornerRadius(40)
-                    }
-                    .padding([.leading, .trailing], 20)
                 }
             }
         }

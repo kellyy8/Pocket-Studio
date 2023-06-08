@@ -5,13 +5,13 @@ struct story_1_panel_6: View {
     @State private var chaptersView: Bool = false
 
     private let layers = [
-        Layer(id: 0, imageName: "bunnyriver", depthEffect: 1.0),
+        Layer(id: 0, imageName: "bunnycampfire", depthEffect: 1.0),
     ]
 
     var body: some View {
         ZStack {
             if chaptersView {
-                story_1_chapters() // Replace this with your actual View
+                story_1_chapters() 
             } else {
                 Group {
                     if switchView {

@@ -5,7 +5,7 @@ struct story_1_panel_7 : View {
     @State private var chaptersView: Bool = false
 
     private let layers = [
-        Layer(id: 0, imageName: "bunnycampfire", depthEffect: 1.0),
+        Layer(id: 0, imageName: "bunnyriver2", depthEffect: 1.0),
     ]
 
     var body: some View {

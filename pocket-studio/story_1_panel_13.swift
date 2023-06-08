@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-struct story_1_panel_9: View {
+struct story_1_panel_13: View {
     @GestureState private var magnification: CGFloat = 1.0
     @GestureState private var dragOffset: CGSize = .zero
     @State private var scale: CGFloat = 1.0
@@ -14,7 +14,7 @@ struct story_1_panel_9: View {
     private let zoomThreshold: CGFloat = 5.0
 
     private let layers = [
-        Layer(id: 0, imageName: "newPanel11", depthEffect: 1.0),
+        Layer(id: 0, imageName: "newPanel16", depthEffect: 1.0),
     ]
 
     private func opacity(layer: Layer) -> Double {
@@ -31,7 +31,7 @@ struct story_1_panel_9: View {
             } else {
                 Group {
                     if switchView {
-                        story_1_panel_10()
+                        story_1_panel_15()
                     } else {
                         GeometryReader { geometry in
                             ZStack() {
@@ -64,7 +64,7 @@ struct story_1_panel_9: View {
                                         )
                                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                                         .onAppear {
-                                            self.position = CGPoint(x: geometry.size.width / 2 + 60, y: geometry.size.height / 2 + 80)
+                                            self.position = CGPoint(x: geometry.size.width / 2 + 31, y: geometry.size.height / 2 - 30)
                                         }
                                 }
                             }
@@ -93,8 +93,8 @@ struct story_1_panel_9: View {
     }
 }
 
-struct story_1_panel_9_Previews: PreviewProvider {
+struct story_1_panel_13_Previews: PreviewProvider {
     static var previews: some View {
-        story_1_panel_9()
+        story_1_panel_13()
     }
 }

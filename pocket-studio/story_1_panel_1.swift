@@ -15,7 +15,6 @@ struct ContentView: View {
 }
 
 struct story_1_panel_1: View {
-    // Other properties and states...
     @State private var showWelcomeMessage = true
     @GestureState private var magnification: CGFloat = 1.0
     @GestureState private var dragOffset: CGSize = .zero
@@ -29,8 +28,9 @@ struct story_1_panel_1: View {
     private let zoomThreshold: CGFloat = 3.0
 
     private let layers = [
-        Layer(id: 0, imageName: "view1", depthEffect: 1.0),
-        Layer(id: 1, imageName: "view2", depthEffect: 2.0),
+        Layer(id: 0, imageName: "panel_1_foreground", depthEffect: 1.0),
+        Layer(id: 1, imageName: "view1", depthEffect: 1.0),
+        Layer(id: 2, imageName: "view2", depthEffect: 2.0),
     ]
 
     private func opacity(layer: Layer) -> Double {
