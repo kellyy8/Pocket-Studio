@@ -94,6 +94,16 @@ struct JournalPage2: View {
                                .offset(x:-26, y:50)
                        }
                     Spacer()
+                    NavigationLink(destination: JournalPage3()
+                     .navigationBarBackButtonHidden(true)) {
+//                           Image(systemName: "arrow.right")
+                         Image("arrow-right")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50, height: 50)
+                            .padding()
+                            .offset(x:29, y:50)
+                    }
                }
                        .foregroundColor(.black)
                        .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)

@@ -36,6 +36,8 @@
 		64FC99972A29235800A4F1C1 /* story_1_panel_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FC99962A29235800A4F1C1 /* story_1_panel_3.swift */; };
 		97952E892A3123C3008259AA /* lofi_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 97952E882A3123C3008259AA /* lofi_music.mp3 */; };
 		97CBA3172A32AD0B0087C177 /* JournalPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CBA3162A32AD0B0087C177 /* JournalPage1.swift */; };
+		97CBA3192A32AFB50087C177 /* JournalPage3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CBA3182A32AFB50087C177 /* JournalPage3.swift */; };
+		97CBA31B2A32AFBF0087C177 /* JournalPage4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CBA31A2A32AFBF0087C177 /* JournalPage4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +71,8 @@
 		64FC99962A29235800A4F1C1 /* story_1_panel_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = story_1_panel_3.swift; sourceTree = "<group>"; };
 		97952E882A3123C3008259AA /* lofi_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lofi_music.mp3; sourceTree = SOURCE_ROOT; };
 		97CBA3162A32AD0B0087C177 /* JournalPage1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalPage1.swift; sourceTree = "<group>"; };
+		97CBA3182A32AFB50087C177 /* JournalPage3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JournalPage3.swift; path = "../../../.Trash/pocket-studio-final/pocket-studio/JournalPage3.swift"; sourceTree = "<group>"; };
+		97CBA31A2A32AFBF0087C177 /* JournalPage4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalPage4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 				64F58D672A31B7CD005C0BA2 /* JournalCover.swift */,
 				97CBA3162A32AD0B0087C177 /* JournalPage1.swift */,
 				64F58D692A31B7D3005C0BA2 /* JournalPage2.swift */,
+				97CBA3182A32AFB50087C177 /* JournalPage3.swift */,
+				97CBA31A2A32AFBF0087C177 /* JournalPage4.swift */,
 				645EC1E12A2B07480082AED2 /* settingsView.swift */,
 				64F4682E2A2D740C0072BBB9 /* onboarding_1.swift */,
 				64F468302A2D74160072BBB9 /* onboarding_2.swift */,
@@ -231,8 +237,10 @@
 			files = (
 				641BC5532A1DACC600C83D8B /* story_1_panel_2.swift in Sources */,
 				64F58D682A31B7CD005C0BA2 /* JournalCover.swift in Sources */,
+				97CBA3192A32AFB50087C177 /* JournalPage3.swift in Sources */,
 				97CBA3172A32AD0B0087C177 /* JournalPage1.swift in Sources */,
 				64F58D6A2A31B7D3005C0BA2 /* JournalPage2.swift in Sources */,
+				97CBA31B2A32AFBF0087C177 /* JournalPage4.swift in Sources */,
 				64FC99972A29235800A4F1C1 /* story_1_panel_3.swift in Sources */,
 				641D1F6C2A00C94D00F369CA /* StartView.swift in Sources */,
 				641CCF7F2A31436F00F7B054 /* story_1_panel_13.swift in Sources */,
