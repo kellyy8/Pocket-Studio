@@ -197,7 +197,7 @@
                         )
                         Spacer()
                     }
-                    .padding(.top, 700)
+                    .padding(.top, 800)
                 }
                 .background(
                     Image("overlay")
