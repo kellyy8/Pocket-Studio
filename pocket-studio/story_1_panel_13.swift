@@ -31,7 +31,7 @@ struct story_1_panel_13: View {
             } else {
                 Group {
                     if switchView {
-                        story_1_panel_15()
+                        story_1_panel_14()
                     } else {
                         GeometryReader { geometry in
                             ZStack() {
