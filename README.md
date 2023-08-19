@@ -17,4 +17,4 @@ Open the file ```pocket-studio.xcodeproj``` in Xcode.
 
 ### Step 4. Run the code.
 Run the project code in Xcode.  
-Interact with the application in iOS Simulator. 
+Interact with the application in iOS Simulator. (Best configured for iPhone 14 Pro.)
